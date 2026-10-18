@@ -1,0 +1,68 @@
+{
+ "id": "1000001",
+ "timePublished": "2026-03-05T09:30:00+00:00",
+ "isCorporative": true,
+ "lang": "ru",
+ "titleHtml": "Тестовая статья: &laquo;всё&raquo; сразу",
+ "editorVersion": "2.0",
+ "postType": "article",
+ "postLabels": [
+  {
+   "type": "translation",
+   "data": {
+    "originalAuthorName": "Jane Doe",
+    "originalUrl": "https://example.com/original"
+   }
+  }
+ ],
+ "author": {
+  "id": "1",
+  "alias": "test_author",
+  "fullname": "Тест Авторов",
+  "avatarUrl": "//habrastorage.org/getpro/habr/avatars/author.png",
+  "speciality": "Инженер",
+  "scoreStats": {
+   "score": 50,
+   "votesCount": 60
+  },
+  "rating": 12.5
+ },
+ "statistics": {
+  "commentsCount": 7,
+  "favoritesCount": 21,
+  "readingCount": 15400,
+  "score": 17,
+  "votesCount": 19,
+  "votesCountPlus": 18,
+  "votesCountMinus": 1
+ },
+ "hubs": [
+  {
+   "id": "1",
+   "alias": "acme",
+   "type": "corporative",
+   "title": "Блог компании ACME",
+   "titleHtml": "Блог компании ACME",
+   "isProfiled": false
+  },
+  {
+   "id": "2",
+   "alias": "python",
+   "type": "collective",
+   "title": "Python",
+   "titleHtml": "Python",
+   "isProfiled": true
+  }
+ ],
+ "textHtml": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Вступление с <strong>жирным</strong>, <em>курсивом</em>, <s>зачёркнутым</s> и <code>inline_code()</code>.</p><p>Ссылка <a href=\"/ru/articles/1/\">относительная</a> и <a href=\"https://example.com/\">внешняя</a>, H<sub>2</sub>O, x<sup>2</sup>.</p><figure class=\"full-width \"><img src=\"https://habrastorage.org/r/w1560/getpro/habr/upload_files/aa/bb/cc/figure.png\" width=\"1560\" height=\"600\" srcset=\"https://habrastorage.org/r/w780/x.png 780w\" sizes=\"100vw\" loading=\"lazy\" decode=\"async\"/><figcaption>Подпись к рисунку</figcaption></figure><h2>Раздел первый</h2><p>Текст раздела.</p><h3>Подраздел</h3><ul><li>Первый пункт</li><li>Второй пункт<ul><li>Вложенный пункт</li></ul></li></ul><ol start=\"3\"><li>Третий</li><li>Четвёртый</li></ol><blockquote><p>Цитата из документации.</p></blockquote><pre><code class=\"python\">def greet(name: str) -&gt; str:\n    # приветствие\n    return f\"Привет, {name}!\"\n</code><div class=\"code-explainer\"><a href=\"https://sourcecraft.dev/\" class=\"tm-button code-explainer__link\" style=\"visibility: hidden;\"><span class=\"sc-logo-wrapper\"></span></a></div></pre><pre><code>plain text block\nsecond line</code></pre><div class=\"table\"><table><tbody><tr><th>Ключ</th><th>Значение</th></tr><tr><td>a</td><td>1</td></tr><tr><td colspan=\"2\">объединённая ячейка</td></tr></tbody></table></div><p>Формула <img class=\"formula inline\" source=\"x^2\" alt=\"x^2\" src=\"https://habrastorage.org/getpro/habr/formulas/formula.svg\"/> в тексте.</p><p><img data-src=\"https://habrastorage.org/webt/lazy/picture.webp\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\"/></p><p><img src=\"https://habrastorage.org/webt/broken.png\" alt=\"битая\"/></p><div class=\"tm-iframe_temp\" data-src=\"https://embedd.srv.habr.com/iframe/abc123\" data-style=\"\" id=\"\" width=\"\"></div><details class=\"spoiler\"><summary>Под спойлером</summary><div class=\"spoiler__content\"><p>Скрытый текст.</p></div></details><hr/><p>Старый редактор:<br/>строка после переноса</p><script>alert(1)</script></div>",
+ "tags": [
+  {
+   "titleHtml": "python"
+  },
+  {
+   "titleHtml": "тестирование"
+  }
+ ],
+ "readingTime": 7,
+ "complexity": "medium"
+}

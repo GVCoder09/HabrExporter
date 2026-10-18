@@ -1,0 +1,39 @@
+{
+ "alias": "test_author",
+ "fullname": "Тест Авторов",
+ "avatarUrl": "//habrastorage.org/getpro/habr/avatars/author.png",
+ "speciality": "Инженер-тестировщик",
+ "rating": 12.5,
+ "ratingPos": 100,
+ "scoreStats": {
+  "score": 51,
+  "votesCount": 61
+ },
+ "followStats": {
+  "followCount": 1,
+  "followersCount": 22
+ },
+ "registerDateTime": "2020-01-15T10:00:00+00:00",
+ "lastActivityDateTime": "2026-03-05T12:00:00+00:00",
+ "location": {
+  "city": {
+   "title": "Казань"
+  },
+  "region": {
+   "title": "Татарстан"
+  },
+  "country": {
+   "title": "Россия"
+  }
+ },
+ "workplace": [
+  {
+   "title": "ACME",
+   "alias": "acme"
+  }
+ ],
+ "counterStats": {
+  "postCount": 5,
+  "commentCount": 40
+ }
+}

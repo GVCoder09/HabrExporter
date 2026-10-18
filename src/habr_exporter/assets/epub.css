@@ -1,0 +1,282 @@
+body {
+      font-family: sans-serif;
+      line-height: 1.5;
+      margin: 0 0.3em;
+      color: #333;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+}
+
+a {
+      color: #548eaa;
+      text-decoration: none;
+}
+
+h1.title {
+      font-size: 1.6em;
+      line-height: 1.25;
+      margin: 0.4em 0 0.5em;
+}
+
+.article-body h2 {
+      font-size: 1.35em;
+      margin: 1.2em 0 0.5em;
+}
+
+.article-body h3 {
+      font-size: 1.15em;
+      margin: 1em 0 0.4em;
+}
+
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+      font-size: 1em;
+      margin: 1em 0 0.3em;
+}
+
+.article-meta-top,
+.article-meta,
+.hubs,
+.labels,
+.translation-note,
+.saved-from,
+.card-sub,
+.counter-label,
+.comment-foot,
+.separated-list .caption,
+figcaption {
+      color: #6b7880;
+      font-size: 0.85em;
+}
+
+.article-meta span,
+.data-icons span {
+      margin-right: 1em;
+}
+
+.username {
+      font-weight: bold;
+      margin-right: 0.5em;
+}
+
+img.userpic {
+      width: 1.4em;
+      height: 1.4em;
+      vertical-align: middle;
+      margin-right: 0.35em;
+      border-radius: 3px;
+}
+
+.label {
+      border: 1px solid #c7d1d8;
+      border-radius: 3px;
+      padding: 0 0.3em;
+      margin-right: 0.4em;
+}
+
+.score-positive {
+      color: #7ea96c;
+}
+
+.score-negative {
+      color: #d06b6b;
+}
+
+.article-body img {
+      max-width: 100%;
+      height: auto;
+}
+
+.article-body img.formula {
+      vertical-align: middle;
+}
+
+figure {
+      margin: 1em 0;
+      text-align: center;
+}
+
+pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background: #f7f7f7;
+      padding: 0.6em 0.7em;
+      font-size: 0.8em;
+      line-height: 1.4;
+      border-radius: 4px;
+}
+
+code {
+      font-family: monospace;
+}
+
+p code,
+li code,
+td code {
+      background: #f2f2f2;
+      padding: 0 0.2em;
+      border-radius: 2px;
+}
+
+blockquote {
+      margin: 1em 0;
+      padding-left: 0.8em;
+      border-left: 3px solid #65a3be;
+      color: #555;
+}
+
+table {
+      border-collapse: collapse;
+      margin: 1em 0;
+}
+
+td,
+th {
+      border: 1px solid #d5dbdf;
+      padding: 0.3em 0.5em;
+      vertical-align: top;
+}
+
+th {
+      background: #f7f9fb;
+}
+
+hr {
+      border: none;
+      border-top: 1px solid #dedede;
+      margin: 1.2em 0;
+}
+
+.spoiler {
+      border-left: 3px solid #d5dee4;
+      padding-left: 0.8em;
+      margin: 1em 0;
+}
+
+.spoiler-title {
+      font-weight: bold;
+      color: #548eaa;
+      margin: 0 0 0.4em;
+}
+
+.image-link {
+      word-wrap: break-word;
+}
+
+.habr-embed {
+      font-size: 0.9em;
+}
+
+.separated-list {
+      margin: 0.3em 0;
+}
+
+.data-icons {
+      margin: 0.6em 0 0;
+      color: #6b7880;
+      font-size: 0.85em;
+}
+
+.authors {
+      margin-top: 1.5em;
+}
+
+.card {
+      margin: 1em 0;
+      padding: 0.7em 0.8em;
+      border: 1px solid #e3e8eb;
+      border-radius: 6px;
+}
+
+.card-logo {
+      width: 3em;
+      height: 3em;
+      float: left;
+      margin: 0 0.8em 0.4em 0;
+      border-radius: 4px;
+}
+
+.card-title {
+      font-weight: bold;
+      font-size: 1.1em;
+}
+
+.card-alias {
+      color: #6b7880;
+      margin-left: 0.4em;
+}
+
+.card-desc {
+      margin: 0.2em 0;
+}
+
+.card-counters {
+      clear: both;
+      padding-top: 0.3em;
+}
+
+.card-counters>div {
+      display: inline-block;
+      margin-right: 1.5em;
+}
+
+.counter-value {
+      font-weight: bold;
+      font-size: 1.15em;
+}
+
+.comments-title .count {
+      color: #6b7880;
+      margin-left: 0.4em;
+      font-weight: normal;
+}
+
+.comment {
+      margin: 0.8em 0;
+}
+
+.comment-head {
+      font-size: 0.9em;
+}
+
+.comment-head time {
+      color: #6b7880;
+      margin-left: 0.4em;
+}
+
+.author-badge {
+      background: #65a3be;
+      color: #fff;
+      padding: 0 0.3em;
+      border-radius: 3px;
+      font-size: 0.8em;
+      margin-left: 0.2em;
+}
+
+.comment-body img {
+      max-width: 100%;
+      height: auto;
+}
+
+.comment-foot .score {
+      margin-left: 0.4em;
+      font-weight: bold;
+}
+
+.comment-children {
+      margin-left: 0.8em;
+      padding-left: 0.6em;
+      border-left: 1px solid #d5dee4;
+}
+
+.comment-children.flat {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+}
+
+.comment-deleted {
+      color: #929ca5;
+      font-style: italic;
+}

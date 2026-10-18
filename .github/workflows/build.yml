@@ -1,0 +1,72 @@
+name: Build
+
+# Run manually (Actions -> Build -> Run workflow). The wheel, the source archive and the Windows
+# build are kept as artifacts of the run; releases are created by hand.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PYTHONUTF8: "1"
+
+jobs:
+  version:
+    name: Read version
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: version
+        run: |
+          version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' src/habr_exporter/__init__.py)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  checks:
+    name: Checks
+    uses: ./.github/workflows/ci.yml
+
+  dist:
+    name: Build wheel and sdist
+    needs: checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: python -m pip install build twine
+      - run: python -m build
+      - run: twine check --strict dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  windows:
+    name: Build Windows app
+    needs: [version, checks]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: python -m pip install . "pyinstaller>=6.10"
+      - name: Build
+        run: >
+          pyinstaller --noconfirm --clean --windowed --name HabrExporter
+          --icon src/habr_exporter/assets/logo.ico --collect-data habr_exporter
+          packaging/launcher.py
+      - name: Pack
+        shell: pwsh
+        run: |
+          Copy-Item LICENSE, README.md dist/HabrExporter/
+          Compress-Archive -Path dist/HabrExporter -DestinationPath "HabrExporter-${{ needs.version.outputs.version }}-windows-x64.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: HabrExporter-*-windows-x64.zip

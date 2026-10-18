@@ -1,0 +1,31 @@
+{
+ "alias": "acme",
+ "imageUrl": "//habrastorage.org/getpro/habr/company/logo.png",
+ "titleHtml": "ACME",
+ "legalName": "ООО «Акме»",
+ "descriptionHtml": "Делаем всё на свете",
+ "statistics": {
+  "subscribersCount": 25905,
+  "rating": 467.81
+ },
+ "location": {
+  "city": {
+   "title": "Москва"
+  },
+  "country": {
+   "title": "Россия"
+  }
+ },
+ "siteUrl": "https://acme.example/",
+ "staffNumber": "101–200 человек",
+ "contacts": [
+  {
+   "title": "Сайт",
+   "url": "https://acme.example/"
+  },
+  {
+   "title": "Telegram",
+   "url": "https://t.me/acme"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest a new format, option or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What do you want to do?
+      description: The task you are trying to solve, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: How it could work
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have considered

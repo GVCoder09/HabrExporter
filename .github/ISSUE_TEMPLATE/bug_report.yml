@@ -1,0 +1,45 @@
+name: Bug report
+description: Something does not work or an article is saved incorrectly
+labels: [bug]
+body:
+  - type: input
+    id: article
+    attributes:
+      label: Article link
+      description: The article (or user, for batch export) where the problem shows up.
+      placeholder: https://habr.com/ru/articles/123456/
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      multiple: true
+      options: [PDF, HTML, DOCX, EPUB, FB2, Markdown, JSON]
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Where
+      options:
+        - "Window: single article"
+        - "Window: batch export"
+        - "Command line (habr-exporter-cli)"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened and what you expected
+      description: A screenshot of the saved file or the window helps a lot.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: For the CLI, run the command without -q and paste what it printed.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Version and OS
+      description: Output of `habr-exporter-cli --version` and your operating system.
+      placeholder: habr-exporter-cli 1.0, Windows 11
+    validations:
+      required: true
