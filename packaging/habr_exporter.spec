@@ -40,6 +40,9 @@ EXCLUDES = (
         "tkinter", "_tkinter", "turtle", "idlelib", "lib2to3", "pydoc", "pydoc_data", "doctest",
         "unittest", "test", "distutils", "setuptools", "pkg_resources", "pip", "wheel",
         "ensurepip", "venv", "sqlite3", "curses", "readline",
+        # optional libraries of the build environment that the app never uses (Pillow and others
+        # import numpy "if available", so it gets bundled from a global Python otherwise)
+        "numpy", "scipy", "pandas", "matplotlib", "PyQt5", "PySide2", "PySide6",
         # Pillow helpers for other toolkits; lxml parts the parser does not use
         "PIL.ImageTk", "PIL._tkinter_finder", "PIL.ImageQt", "PIL.ImageGrab", "PIL._avif",
         "lxml.objectify", "lxml.html.soupparser", "lxml.html.html5parser", "lxml.html.diff",
