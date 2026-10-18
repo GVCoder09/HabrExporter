@@ -68,7 +68,7 @@ jobs:
         shell: pwsh
         run: |
           Copy-Item LICENSE, README.md dist/HabrExporter/
-          7z a -tzip -mx=9 -mfb=258 -mpass=15 "HabrExporter-${{ needs.version.outputs.version }}-windows-x64.zip" ./dist/HabrExporter
+          7z a -tzip -mx=9 "HabrExporter-${{ needs.version.outputs.version }}-windows-x64.zip" ./dist/HabrExporter
       - uses: actions/upload-artifact@v7
         with:
           name: windows
