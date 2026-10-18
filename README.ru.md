@@ -24,6 +24,10 @@
 - [English](README.md)
 - **[Русский](README.ru.md)**
 
+<p align="center">
+  <img src="./site/images/social-preview.ru.png" width="640" alt="Habr Exporter" />
+</p>
+
 ## Содержание <!-- omit in toc -->
 - [Habr Exporter](#habr-exporter)
   - [Описание](#описание)
