@@ -16,9 +16,9 @@
 [![GitHub Stars](https://img.shields.io/github/stars/GVCoder09/HabrExporter.svg?style=dark)](https://github.com/GVCoder09/HabrExporter)
 [![GitHub Forks](https://img.shields.io/github/forks/GVCoder09/HabrExporter.svg?style=dark)](https://github.com/GVCoder09/HabrExporter)
 [![GitHub Last commit](https://img.shields.io/github/last-commit/GVCoder09/HabrExporter.svg?style=dark)](https://github.com/GVCoder09/HabrExporter)
-[![GitHub Pages](https://img.shields.io/badge/Website-Live-green?style=flat&logo=github)](https://gvcoder09.github.io/habrexporter_site/)
+[![GitHub Pages](https://img.shields.io/badge/Website-Live-green?style=flat&logo=github)](https://gvcoder09.github.io/HabrExporter/)
 
-🌐 **[Website & Documentation](https://gvcoder09.github.io/habrexporter_site/)** - user-friendly guide and overview
+🌐 **[Website & Documentation](https://gvcoder09.github.io/HabrExporter/)** - user-friendly guide and overview
 
 **Read this in other languages / Читайте на других языках**
 - **[English](README.md)**
