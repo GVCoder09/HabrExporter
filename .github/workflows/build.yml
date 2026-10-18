@@ -1,7 +1,7 @@
 name: Build
 
-# Run manually (Actions -> Build -> Run workflow). The wheel, the source archive and the Windows
-# build are kept as artifacts of the run; releases are created by hand.
+# Run manually (Actions -> Build -> Run workflow). The wheel, the source archive and the Windows and
+# Linux builds are kept as artifacts of the run; releases are created by hand.
 on:
   workflow_dispatch:
 
@@ -57,16 +57,52 @@ jobs:
           python-version: "3.13"
       - run: python -m pip install . "pyinstaller>=6.10"
       - name: Build
-        run: >
-          pyinstaller --noconfirm --clean --windowed --name HabrExporter
-          --icon src/habr_exporter/assets/logo.ico --collect-data habr_exporter
-          packaging/launcher.py
+        run: pyinstaller --noconfirm --clean packaging/habr_exporter.spec
+      - name: Smoke test
+        shell: bash
+        run: |
+          dist/HabrExporter/HabrExporter-cli.exe --version
+          # the window must still be running after 10 seconds (exit code 124 = timeout)
+          QT_QPA_PLATFORM=offscreen timeout 10 dist/HabrExporter/HabrExporter.exe || [ $? -eq 124 ]
       - name: Pack
         shell: pwsh
         run: |
           Copy-Item LICENSE, README.md dist/HabrExporter/
-          Compress-Archive -Path dist/HabrExporter -DestinationPath "HabrExporter-${{ needs.version.outputs.version }}-windows-x64.zip"
+          7z a -tzip -mx=9 -mfb=258 -mpass=15 "HabrExporter-${{ needs.version.outputs.version }}-windows-x64.zip" ./dist/HabrExporter
       - uses: actions/upload-artifact@v7
         with:
           name: windows
           path: HabrExporter-*-windows-x64.zip
+          compression-level: 0  # already compressed
+
+  linux:
+    name: Build Linux app
+    needs: [version, checks]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install Qt system libraries
+        # Needed to collect and run Qt WebEngine; the same packages as in ci.yml.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils             libegl1 libgl1 libgbm1 libdrm2 libxkbcommon0 libxkbcommon-x11-0 libxcb-cursor0             libnss3 libxcomposite1 libxdamage1 libxrandr2 libxtst6 libxkbfile1 libxshmfence1             libasound2t64 libdbus-1-3 libfontconfig1 libglib2.0-0t64 fonts-dejavu-core
+      - run: python -m pip install . "pyinstaller>=6.10"
+      - name: Build
+        run: pyinstaller --noconfirm --clean packaging/habr_exporter.spec
+      - name: Smoke test
+        run: |
+          dist/HabrExporter/HabrExporter-cli --version
+          # the window must still be running after 10 seconds (exit code 124 = timeout)
+          QT_QPA_PLATFORM=offscreen timeout 10 dist/HabrExporter/HabrExporter || [ $? -eq 124 ]
+      - name: Pack
+        run: |
+          cp LICENSE README.md dist/HabrExporter/
+          tar -C dist -cf - HabrExporter | xz -9e -T0 > "HabrExporter-${{ needs.version.outputs.version }}-linux-x64.tar.xz"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: linux
+          path: HabrExporter-*-linux-x64.tar.xz
+          compression-level: 0  # already compressed

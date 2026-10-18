@@ -27,6 +27,7 @@ desktop.ini
 *.log
 
 *.spec
+!packaging/*.spec
 
 AGENTS.md
 CLAUDE.md
