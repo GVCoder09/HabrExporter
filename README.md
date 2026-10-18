@@ -39,6 +39,7 @@
     - [Batch export](#batch-export)
     - [Command-line mode](#command-line-mode)
   - [How the formats differ](#how-the-formats-differ)
+    - [What a PDF looks like](#what-a-pdf-looks-like)
     - [Markdown for notes and wikis](#markdown-for-notes-and-wikis)
     - [JSON for programs](#json-for-programs)
   - [Documentation](#documentation)
@@ -229,6 +230,7 @@ The schema (`"schema": "habr-exporter/article"`, `"version": 1`) is described in
 * [docs/architecture.md](docs/architecture.md): how the application works, where the data comes from, how each exporter works.
 * [docs/development.md](docs/development.md): tests, coverage, linter, how to add a new format.
 * [CHANGELOG.md](CHANGELOG.md): what changed in each version.
+* [DeepWiki](https://deepwiki.com/GVCoder09/HabrExporter): an AI-generated overview of the repository, you can ask questions about the code.
 
 ## Development
 
