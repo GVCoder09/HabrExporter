@@ -125,8 +125,20 @@ def raster_for_docx(image: ImageData) -> Raster | None:
     if image.mime == "image/svg+xml":
         return _svg_to_png(image.data)
     if image.mime in DOCX_NATIVE and image.width and image.height:
-        return Raster(image.data, image.width, image.height)
+        data = _with_jfif(image.data) if image.mime == "image/jpeg" else image.data
+        return Raster(data, image.width, image.height)
     return to_png(image)
+
+
+#: SOI followed by a minimal JFIF APP0 segment (version 1.1, no density, no thumbnail).
+_JFIF_HEADER = b"\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00"
+
+
+def _with_jfif(data: bytes) -> bytes:
+    """Add a JFIF segment to a bare JPEG: python-docx only recognizes JPEGs with JFIF or Exif."""
+    if data[:2] != b"\xff\xd8" or data[6:10] in (b"JFIF", b"Exif"):
+        return data
+    return _JFIF_HEADER + data[2:]
 
 
 def to_png(image: ImageData) -> Raster | None:
